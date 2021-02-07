@@ -63,14 +63,25 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    transition: background-color 0.25s ease;
 }
 
 #ai-button {
     background-color: green;
 }
 
+#ai-button:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
 #real-button {
     background-color: red;
+}
+
+#real-button:hover {
+    background-color: darkred;
+    cursor: pointer;
 }
 
 #info {
