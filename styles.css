@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 body {
     margin: 0px;
     padding: 0px;
     width: 100vw;
     height: 100vh;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #container {
@@ -16,9 +19,8 @@ body {
 
 #title {
     position: absolute;
-    padding: 1%;
-    font-size: 3em;
-    top: 0;
+    font-size: 2.5em;
+    top: 2.55%;
     vertical-align: top;
     font-weight: bold;
     text-align: center;
@@ -27,7 +29,7 @@ body {
 #message {
     position: absolute;
     padding: 10%;
-    font-size: 5em;
+    font-size: 4em;
     text-align: center;
     word-break: normal;
     align-self: center;
@@ -41,6 +43,7 @@ body {
 
 #buttons {
     width: 50%;
+    min-width: 50vh;
     margin-top: 1%;
     display: flex;
     position: absolute;
@@ -53,6 +56,7 @@ body {
     margin: 1%;
     height: 100%;
     padding: 2.5%;
+    min-width: 25vh;
     flex: 1;
     font-size: 0.5em;
     display: flex;
@@ -72,5 +76,7 @@ body {
 #info {
     position: absolute;
     vertical-align: bottom;
-    bottom: 0;
+    bottom: 2.5%;
+    width: 100%;
+    text-align: center;
 }
