@@ -33,6 +33,7 @@ body {
     text-align: center;
     word-break: normal;
     align-self: center;
+    transition: opacity 0.25s ease;
 }
 
 #dummy {
@@ -90,4 +91,33 @@ body {
     bottom: 2.5%;
     width: 100%;
     text-align: center;
+}
+
+#result-correct {
+    position: absolute;
+    width: 35vh;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 7vh;
+    background-color: darkgreen;
+    color: white;
+    z-index: 1;
+    border-radius: 25px;
+    padding: 5vh;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    transform: scale(0);
+}
+
+#result-correct > i {
+    font-size: 3em;
+}
+
+#streak {
+    font-style: italic;
+    font-size: 0.5em;
 }
