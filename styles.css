@@ -33,6 +33,7 @@ body {
     text-align: center;
     word-break: normal;
     align-self: center;
+    opacity: 0;
     transition: opacity 0.25s ease;
 }
 
