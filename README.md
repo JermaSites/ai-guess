@@ -1,4 +1,4 @@
-# Jerma AI Guesser
+# (Jerma AI Guesser)[https://aiguess.jerma.io/]
 
 Test your knowledge of Jerma's Twitch Chat!
 
