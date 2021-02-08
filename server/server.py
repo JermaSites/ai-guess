@@ -6,8 +6,8 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-aiLines = open("./ai.txt", encoding="utf8").readlines() 
-realLines = open("./real.txt", encoding="utf8").readlines() 
+aiLines = open(os.path.basename(os.path.dirname(os.path.realpath(__file__))) + "/ai.txt", encoding="utf8").readlines() 
+realLines = open(os.path.basename(os.path.dirname(os.path.realpath(__file__))) + "/real.txt", encoding="utf8").readlines() 
 
 @app.route('/api/', methods=['GET'])
 @cross_origin()
