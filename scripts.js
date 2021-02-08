@@ -362,7 +362,8 @@ var correctAnswer;
 var streak = 0;
 
 const newMessage = async () => {
-    const response = await fetch('http://localhost:5000/api/', {
+    message.style.opacity = "0";
+    const response = await fetch('https://jerma-real-or-ai.herokuapp.com/api/', {
         method: 'GET',
         headers: {
         'Content-Type': 'application/json'
@@ -370,14 +371,14 @@ const newMessage = async () => {
     });
     const myJson = await response.json(); //extract JSON from the http response
     correctAnswer = myJson.result;
-    var message = myJson.string;
-    message = message.replace(":)", "<img alt='\:-?\)' title='\:-?\)' class='twitch-emote twitch-emote-0' src='https://static-cdn.jtvnw.net/emoticons/v1/1/1.0'>");
-    message = message.replace("D:", "<img alt='D:' title='D:' class='twitch-emote twitch-emote-0' src='https://cdn.betterttv.net/emote/55028cd2135896936880fdd7/1x'>");
-    message = message.replace(regex, replacer);
+    var generatedMessage = myJson.string;
+    generatedMessage = generatedMessage.replace(":)", "<img alt='\:-?\)' title='\:-?\)' class='twitch-emote twitch-emote-0' src='https://static-cdn.jtvnw.net/emoticons/v1/1/1.0'>");
+    generatedMessage = generatedMessage.replace("D:", "<img alt='D:' title='D:' class='twitch-emote twitch-emote-0' src='https://cdn.betterttv.net/emote/55028cd2135896936880fdd7/1x'>");
+    generatedMessage = generatedMessage.replace(regex, replacer);
+    displayMessage.innerHTML = generatedMessage;
     setTimeout(() => {
-        displayMessage.innerHTML = message;
-    }, 250);
-    // document.getElementById("twitchChat").innerHTML = (twitchEmoji.parse( myJson.string ), { emojiSize : 'medium' } );
+        message.style.opacity = "1";
+    }, 100);
 };
 
 function guess (guess) {
@@ -390,29 +391,29 @@ function guess (guess) {
     }
     result.style.transform = "scale(1)";
     message.style.pointerEvents = "none";
-    message.style.opacity = "0";
-    newMessage();
     result.style.transition = "transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
     if(result === correct) {
+        newMessage();
         streak++;
         streakCorrect.innerHTML = "Current Streak: " + streak;
         setTimeout(() => {
             result.style.transform = "scale(0)";
-            message.style.opacity = "1";
+            // message.style.opacity = "1";
             message.style.pointerEvents = "revert";
             setTimeout(() => {
                 result.style.transition = "none";
             }, 200);
         }, 500);
     } else {
+        message.style.opacity = "0";
         streakIncorrect.innerHTML = "Streak: " + streak;
     }
 }
 
 function tryAgain () {
+    newMessage();
     streak = 0;
     incorrect.style.transform = "scale(0)";
-    message.style.opacity = "1";
     message.style.pointerEvents = "revert";
     setTimeout(() => {
         incorrect.style.transition = "none";
@@ -420,6 +421,3 @@ function tryAgain () {
 }
 
 newMessage();
-setTimeout(() => {
-    message.style.opacity = "1";
-}, 250);
