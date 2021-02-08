@@ -36,7 +36,7 @@ body {
     transition: opacity 0.25s ease;
 }
 
-#dummy {
+.dummy {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -93,7 +93,7 @@ body {
     text-align: center;
 }
 
-#result-correct {
+.result {
     position: absolute;
     width: 35vh;
     height: 35vh;
@@ -103,7 +103,6 @@ body {
     align-content: center;
     text-align: center;
     font-size: 7vh;
-    background-color: darkgreen;
     color: white;
     z-index: 1;
     border-radius: 25px;
@@ -113,11 +112,43 @@ body {
     transform: scale(0);
 }
 
-#result-correct > i {
+#result-correct {
+    background-color: darkgreen;
+}
+
+#result-incorrect {
+    background-color: darkred;
+}
+
+.result > i {
     font-size: 3em;
 }
 
-#streak {
+
+#streak-correct {
     font-style: italic;
     font-size: 0.5em;
+}
+
+#streak-incorrect {
+    font-style: italic;
+    font-size: 0.3em;
+}
+
+#try-again {
+    font-size: 0.4em;
+    position: relative;
+    background: darkslategray;
+    border-radius: 25px;
+    width: 65%;
+    margin-left: auto;
+    padding: 7px;
+    margin-right: auto;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#try-again:hover {
+    background-color: black;
+    cursor: pointer;
 }

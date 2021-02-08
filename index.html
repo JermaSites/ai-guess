@@ -14,19 +14,27 @@
 
     <body>
         <div id="container">
-            <div id="result-correct">
+            <div id="result-correct" class="result">
                 <i class="fas fa-check"></i>
                 <b>Correct!</b>
-                <div id="streak">
+                <div id="streak-correct" class="streak">
                     Current Streak: 1
                 </div>
+            </div>
+            <div id="result-incorrect" class="result">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                <b>Incorrect!</b>
+                <div id="streak-incorrect" class="streak">
+                    Streak: 1
+                </div>
+                <div id="try-again" onclick="tryAgain()">Try again?</div>
             </div>
             <div id="title">
                 Is this message AI generated or a real message from Jerma's Twitch Chat?
             </div>
             <div id="message">
                 Can you imagine a world where we're all represented by a font??
-                <div id="dummy">
+                <div class="dummy">
                     <div id="buttons">
                         <div id="ai-button" onclick="guess('ai')">
                             AI
