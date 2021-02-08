@@ -1,4 +1,4 @@
-# jermaRealOrAI
+# Jerma AI Guesser
 
 Test your knowledge of Jerma's Twitch Chat!
 
