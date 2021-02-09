@@ -370,6 +370,9 @@ const newMessage = async () => {
         }
     });
     const myJson = await response.json(); //extract JSON from the http response
+    if(myJson === undefined || myJson.result === "" || myJson.string === undefined) {
+        newMessage();
+    }
     correctAnswer = myJson.result;
     var generatedMessage = myJson.string;
     generatedMessage = generatedMessage.replace(":)", "<img alt='\:-?\)' title='\:-?\)' class='twitch-emote twitch-emote-0' src='https://static-cdn.jtvnw.net/emoticons/v1/1/3.0'>");
