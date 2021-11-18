@@ -1,0 +1,5 @@
+/*
+  Permissions-Policy: interest-cohort=()
+
+https://:aiguess.pages.dev/*
+  X-Robots-Tag: noindex
