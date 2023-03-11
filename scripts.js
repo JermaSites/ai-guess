@@ -363,7 +363,7 @@ var streak = 0;
 
 const newMessage = async () => {
     message.style.opacity = "0";
-    const response = await fetch('https://jerma-chat-or-ai.herokuapp.com/api/', {
+    const response = await fetch('https://ai-guess-sticks-stuff.koyeb.app/api/', {
         method: 'GET',
         headers: {
         'Content-Type': 'application/json'
