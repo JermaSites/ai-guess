@@ -363,7 +363,7 @@ var streak = 0;
 
 const newMessage = async () => {
     message.style.opacity = "0";
-    const response = await fetch('https://ai-guess-sticks-stuff.koyeb.app/api/', {
+    const response = await fetch('https://ai-guess-aba1397668ce.herokuapp.com/api/', {
         method: 'GET',
         headers: {
         'Content-Type': 'application/json'
